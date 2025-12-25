@@ -1,0 +1,9 @@
+[submodule "apps/reapp"]
+	path = apps/reapp
+	url = git@github.com:noiz354/ReApp.git
+[submodule "shared"]
+	path = shared
+	url = git@github.com:noiz354/kmp-shared.git
+[submodule "apps/web"]
+	path = apps/web
+	url = git@github.com:noiz354/ReWeb.git
