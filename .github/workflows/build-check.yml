@@ -28,21 +28,24 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          # Points to RN lockfile to optimize caching
           cache-dependency-path: './apps/reapp/package-lock.json'
 
-      - name: Build KMP Shared Logic
-        run: ./gradlew :shared:build
+      - name: Build KMP Shared
+        run: |
+          cd shared
+          chmod +x gradlew
+          ./gradlew build
 
-      - name: Build React JS Web
+      - name: Build React JS
         run: |
           cd apps/web
           npm install
           npm run build
 
-      - name: Build React Native Android
+      - name: Build RN Android
         run: |
           cd apps/reapp
           npm install
           cd android
+          chmod +x gradlew
           ./gradlew assembleRelease
